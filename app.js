@@ -55,11 +55,12 @@ app.get('/campgrounds/:id/edit', async (req, res) => {
     res.render('campgrounds/edit', {campground});
 })
 
-app.put('/campgrounds/:id', async (req, res) => {
-    const {id} = req.params;
-    const campground = await Campground.findByIdAndUpdate(id, {...req.body.campground})
-    res.redirect(`/campgrounds/${campground._id}`)
-})
+// have to understand how express works here
+// app.put('/campgrounds/:id', async (req, res) => {
+//     const {id} = req.params;
+//     const campground = await Campground.findByIdAndUpdate(id, {...req.body.campground})
+//     res.redirect(`/campgrounds/${campground._id}`)
+// })
 
 
 app.listen(3000, () => {
